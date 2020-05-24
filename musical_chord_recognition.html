@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Musical Chord Recognition</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/hover/hover.min.css" rel="stylesheet">
+  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="education.html"><img src="assets/img//logo.png" alt="logo"></a>  
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+      </div>
+    </div>
+  </nav><!-- End Navbar -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="paddsection">
+      <div class="container">
+
+            <div class="about-descr">
+
+              <p class="p-heading">Musical Note Identification using DSP</p>
+              <p class="separator">
+              <b><strong>Abstract</strong></b><br>
+This project presents a method to perform musical notes recognition from live signals such as notes played form guitar, keyboard or flute using frequency spectrum analysis. Human vocal sounds can be analyzed with classical Fourier transform, however musical sounds are time varying signals occupying a wider band of frequencies as compared to human voice signals and cannot be sufficiently analyzed with classical Fourier transform techniques. Such a tool can be very helpful for an amateur learner who wants the keystrokes for a song or for an experienced player to train ears to identify various sound pitches.
+<br><br>
+<b><strong>Introduction</strong></b><br>
+Retrieving musical information from a live or recorded performance is a highly non-trivial information that is highly desired by in various operations in a prompt, precise and self-regulating manner. We have developed a software system that accepts a musical note in the form of a digitized waveform from a live music input and obtain the frequency of the note from that signal. We have implemented this by using event detection and pitch identification, where notes are identified from the pitch frequencies which is different from each and every note. Our algorithm performs signal processing in time and frequency domain to correctly identify the frequency of the musical note.
+<br>We aim to design and develop a software system that could accurately analyze a signal and provide the features of the signal to assist musical composers, djs, remixers etc.<br><br>
+<b><strong>Literature Survey</strong></b><br>
+Pitch is the term used to describe how high and low sounds are. It's the frequency at which a particular note is perceived to our ears. Pitch detection is one of the very hard challenges of DSP domain and our project strives to do that when provided with suitable constraints. The frequency of a pitch is measured in Hertz. One hertz is defined as one cycle per sound. Fro e.g. Note ‘A’ in the fourth octave cycles at 440 times hence it is 440 Hz. 
+<br>As mentioned above, all notes have a characteristic pitch frequency. Musical notes form harmonics where each note repeats after a cycle of 12 notes and this is known as an octave.  Our projects implements notes detection from the fourth and fifth octave.<br>Fourier transform a technique use to generate a histogram of all the frequencies occurring a block of samples. Thus, using suitable analysis, pitch, smoothing, and other musical characteristics can be distinguished by fourier transforms. Fig below shows the FFT of a musical sample and is taken from the Musical Notes Identification.
+<br><br>
+<img src="assets/img/music.png" alt="Number of records" width=900px><br><br>
+The peak frequency component can be obtained via the formula below<br><br>
+<img src="assets/img/form.png" alt="Number of records" width=100px><br><br>
+Where,<br>
+ i is the index of the maximum amplitude and,<br>
+T is the total number of samples at a time T<br><br>
+
+
+<b><strong>Preliminary Analysis/Methodology</strong></b><br>
+We have performed our experiment on live music input by utilizing the pyAudio library. As we press a key on the piano, our algorithm outputs the frequency of that particular note. Our algorithm can be broken down into the following steps:<br><br>
+<i><u>Thresholding:</u></i><br>
+We have implemented our system using constant thresholding as our input is live musical notes obtained in real time. The optimum threshold value was found by trial and error.
+<br><br>
+<i><u>Width Selection:</u></i>
+We have used the width of block size 4096. This is because the size of 4096 is large enough to give higher resolution of different characteristic frequencies for each and every note. The width is small enough to have a very small output lag.
+<br><br>
+<i><u>Finding Instant:</u></i>
+As we press play a note, the frequency of the note is calculated and displayed with the timestamp at which the note is played in real time.
+<br><br>
+<i><u>DFT analysis:</u></i>
+Using the fast fourier transform, we are obtaining the histogram of all the frequencies present in a block. The frequency with the highest amplitude is assumed to be our fundamental pitch frequency. This method has a few errors because the harmonics of the fundamental frequency are also present in the frequency spectrum which we identified as false positives.
+<br><br>
+<i><u>Assignment:</u></i>
+Since we are identifying notes only from the fifth octave for this project, we are restricting the identification to only those frequencies. This helps us to eliminate the harmonics form the higher or lower octaves.
+<br><br>
+<i><u>Time domain analysis:</u></i>
+Since the duration of the notes played can be more than the samples in the block size, repetition in the same notes may be logged. To remove this, we are disabling the identification of the same note for a particular time period. For this time period, for piano was found to be 200ms by trial and error.
+<br><br>
+
+<b><strong>Simulation results</strong></b><br>
+Fig 1. Shows the different notes identified and time-stamped by out application. This proves the correctness of our algorithm.<br><br>
+<img src="assets/img/timest.png" alt="Number of records" width=900px><br><br>
+Fig. 3 shows an FFT spectrum when a chord is struck. Using this, we determined a good value of threshold and delay for out project<br><br>
+<img src="assets/img/keyst.png" alt="Number of records" width=900px><br><br>
+<b><strong>Conclusions</strong></b><br>
+In this project we have developed a software system that identifies the frequencies of a piano song “Happy Birthday” is identified and corresponding notes are identified with timestamp of the notes shown in the project video. Our project implements real time analysis of sound samples and outputs very accurate results. We have gathered the desired results by varying the parameters such as threshold value and width and makes our a great assisting tool for learning to play a musical instrument.
+<br><br>
+
+               </p>
+
+               <div style="text-align: center;"class="col-lg-111" >
+        <a type="submit" class="btn btn-defeault btn-send" href="https://github.com/Arundita/Musical-chord-recognition">Click here for the github repo</a>
+    </div><br><br>
+  
+        </div>
+      </div>
+
+    </div><!-- End About Section -->
+
+
+  </main><!-- End #main --> 
+
+  
+
+</body>
+
+</html>

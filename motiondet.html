@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>motion-detection-using-opencv</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/hover/hover.min.css" rel="stylesheet">
+  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="education.html"><img src="assets/img//logo.png" alt="logo"></a>  
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+      </div>
+    </div>
+  </nav><!-- End Navbar -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="paddsection">
+      <div class="container">
+       
+            <div class="about-descr">
+
+              <p class="p-heading">Motion Detection using OpenCV</p>
+              <p class="separator">
+              <b><strong>Introduction</strong></b>
+              <br>Detects transient motion in a video feed. If said motion is large enough, and recent enough, reports that there is motion!
+
+The motion detected state is then held for some user specified amount of time even when no motion is detected until finally the program declares that no motion is detected.<br><br>
+
+
+
+
+<b><strong>Dependencies</strong></b><br>
+OpenCV2<br>
+Image Utilities
+<br><br>
+
+
+<b><strong>Working Theory</strong></b><br>
+OpenCV is used to calculate absolute frame deltas against the most recent saved frame and the current frame. The frame deltas are then passed through a threshold filter, and bounding boxes are drawn around contours of the thresholded frame. (The frequency of saving frames is determined via the user parameter.)<br>
+
+A sufficiently large bounding box derived from the contours of a thresholded frame delta image is considered movement.<br><br>
+
+</p>
+
+               <div style="text-align: center;"class="col-lg-111" >
+        <a type="submit" class="btn btn-defeault btn-send" href="https://github.com/Arundita/security-camera-using-OpenCV">Click here for the github repo</a>
+    </div><br><br>
+  
+        </div>
+      </div>
+
+    </div><!-- End About Section -->
+
+
+    
+
+    
+
+</body>
+
+</html>

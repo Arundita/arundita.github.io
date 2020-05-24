@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>web-application-php-mysql</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/hover/hover.min.css" rel="stylesheet">
+  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="education.html"><img src="assets/img//logo.png" alt="logo"></a>  
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+      </div>
+    </div>
+  </nav><!-- End Navbar -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="paddsection">
+      <div class="container">
+       
+            <div class="about-descr">
+
+              <p class="p-heading">Web Application using Php + MySQL</p>
+              <p class="separator">
+              <b><strong>Relational Model</strong></b>
+              <br><br><img src="assets/img/rel.png" alt="Number of records" width="900"><br><br><br>
+
+
+
+
+<b><strong>Summary of Development environment</strong></b><br>
+Programming/Scripting language: Php, HTML5, CSS3, JavaScript, JQuery<br>
+Database: MySQL<br>
+Web-Server: XAMPP<br>
+Code Editor: Sublime Text
+
+<br><br>
+
+
+<b><strong>Summary of features</strong></b><br>
+
+<i><u>Registration page</u></i><br>
+This screen is used to Register the new users. The features we have implemented at this screen are:<br>
+To check if the password entered under ‘Password’ and ‘Confirm Password’ fields are matching. In case they are not matching, we give an alert message ‘Passwords do not match’ .<br> 
+
+If the passwords match then the next check is to check if the username entered by the user is already existing in the database. If it does already exist,we give an alert message on the screen to enter another username.<br>
+When both ‘Username’ and ‘Password’ are validated then the data is saved to the database. Password is encrypted using PhP md5() function that calculates the md5 hash of the string and stores the same in the database.<br>
+After the registration page, the user is redirected to the Login Page. <br><br>
+
+<i><u>Login page</u></i><br>
+This screen is used to Login to the application. When we get the input from the user, we check it against our database. If a username is not found in the database, we give an alert message ‘User does not exist’. <br>
+The user can click On ‘Register’ link to register and if its selected, the user is redirected to the Registration Page. <br>
+If the user is successfully logged in after checking the username and Password against Database, it’s redirected to the Welcome Page. <br><br>
+
+<i><u>Welcome page</u></i><br> On the screen, we have displayed a welcome message to the user that displays the username in the welcome message. We have implemented this using the SESSION functionality of Php (session_start() and echo $_SESSION['username']).  Also, we have provided 3 options to the user to select from<br>
+
+BUY : If the user wants to buy a new insurance, he can click on this ‘BUY’ button. <br>
+SEARCH : If the user wants to search the insurance, he can click on this ‘SEARCH’ button. <br>
+BROWSE: If the user wants to browse an insurance, he can click on this ‘BROWSE’ button. <br><br>
+
+<i><u>Customer Info page</u></i><br> If the user clicked on ‘BUY’ button on the welcome page,,the user is redirected to fill the ‘CUSTOMER DETAILS’ which includes first name, last name, Address(Composite), Gender(Optional), Marital Status, customer type(customer / WDS employee) and username.<br>
+
+All the mendatory input fields are implemented with “required” attribute of HTML5 to enforce the mandatory policy.<br>
+
+Gender, marital status and customer type is implemented with radio buttons. Gender is kept optional by not using the “checked” attribute of HTML5.<br>
+
+All the input fields are kept at a maximum of 30 characters, if the user enters more than 30 characters, an alert message is displayed that says “Maximum character limit exceeded”.<br><br>
+
+<i><u>Select the insurance Type(Home/Auto)</u></i><br> Once the user enters all the Personal Details, he is redirected to the next screen where he has 2 options to select from: <br>
+AUTO INSURANCE : If the user wants to get Auto Insurance with us. <br>
+HOME INSURANCE : If the user wants to get Home Insurance with us. <br><br>
+
+<i><u>Auto Details</u></i><br> If the user selected AUTO INSURANCE, He is redirected to the page where he has to enter Vehicle details (Including vehicle identification number (VIN), Vehicle_make_model_year and status of the vehicle).<br>
+
+Vehicle identification number is kept unique. If the user enters a VIN that is already existing in the database, an alert message is displayed as “VIN already in use. Try another VIN”.<br>
+
+Vehicle status is implemented with radio buttons with a “checked” attribute to make it a mandatory field.<br><br>
+
+<i><u>Driver Details</u></i><br> Once the Auto details have been entered, the user is redirected to enter the driver details for the vehicle being insured. Driver Details include Name, Date of Birth and License Number. Once the user has entered all the details, the data is being stored to the database <br>
+
+Driver birthdate is implemented with a ‘date’ attribute of HTML5 which can take any value starting from year 1950.<br><br>
+
+
+<i><u>Auto Invoice details</u></i><br> After getting all the details, an Invoice is being generated and displayed to the user on ‘INVOICE SCREEN’ to review. For generating the invoice, <br>
+
+Payment Due Date is calculated using the Date() function of PHP. We add +30 days to the current date by using strtotime() function with date function of PHP. Invoice details are displayed to the user.<br><br>
+
+<i><u>Auto Payment page</u></i><br> Once the user has reviewed the invoice, the user is redirected to the payment page. For Payment method, there are 4 Options : CREDIT, DEBIT, PAYPAL, CHECK. The user can select any of the modes available. <br>
+Once the user selects the mode, the corresponding fields appear on the screen. This is implemented by using Javascript with a function taking value as per the selected mode and displaying the dynamic fields. <br>
+For ex.  If the user selected CREDIT mode of payment, 4 fields(Name, Card Number,, CVV, Expiration Date) appear for the payment information. The user enters the details to proceed with the payment. <br><br>
+<i><u>Payment successful page</u></i><br> The user gets a Payment successful Page. Payment success page consists of following links:<br>
+Go to homepage: user is redirected to the welcome page with the options to buy, searh, browse.<br>
+Buy another insurance: user is navigated to “select an insurance” page.<br>
+Log out: session is destroyed and the user is navigated to the login page.<br><br>
+
+
+<i><u>Home Details</u></i><br> If the user wants to buy Home Insurance and clicked ‘HOME INSURANCE’ button, he is redirected to enter Home details. Home details include Purchased Date, Purchased Value, Area, Type. Along with this User also has to enter If the home has Automatic fire Notification, Installed Security System, Type of Swimming Pool, Type of Basement. Once the user has entered all the details, the data is stored in the database <br>
+
+Hometype, basement, auto fire notification, home security system and swimming pool are implemented with radio buttons. Swimming pool is implemented without the “check” attribute of HTML to enforce the NULL value.<br><br>
+
+<i><u>Home Invoice details</u></i> <br>After getting all the details, an Invoice is being generated and displayed to the user on ‘INVOICE SCREEN’ to review.<br>
+
+Payment Due Date is calculated using the Date() function of PHP. We add +30 days to the current date by using strtotime() function with date function of PHP. Invoice details are displayed to the user.<br><br>
+
+<i><u>Home Payment page</u></i><br>  Once the user has reviewed the invoice, the user is redirected to the payment page. For Payment method, there are 4 Options : CREDIT, DEBIT, PAYPAL, CHECK. The user can select any of the modes available. <br>
+Once the user selects the mode, the corresponding fields appear on the screen. This is implemented by using Javascript with a function taking value as per the selected mode and displaying the dynamic fields. <br>
+For ex.  If the user selected CREDIT mode of payment, 4 fields(Name, Card Number,, CVV, Expiration Date) appear for the payment information. The user enters the details to proceed with the payment. <br><br>
+
+
+<i><u>Payment successful page</u></i> <br>The user gets a Payment successful Page. Payment success page consists of following links:<br>
+Go to homepage: user is redirected to the welcome page with the options to buy, searh, browse.<br>
+Buy another insurance: user is navigated to “select an insurance” page.<br><br>
+<i><u>Log out</u></i><br> session is destroyed and the user is navigated to the login page.<br><br>
+
+
+<i><u>Browse the insurance</u></i> <br>If the user clicked on ‘BROWSE’ Button, we are displaying the details of Insurances which the user has purchased till date. <br>
+We have added the feature to display multiple insurances after the suggestions made at our presentation. <br>
+From our understanding of the business requirement, we had implemented the flow as “each user can buy one home and oneauto insurance.” changes are implemented.<br><br>
+
+<i><u>Base on the type of the user</u></i><br>
+If the user is a new customer, all the insurances bought by the user are displayed on the browse section.<br>
+For a WDS employee, all the insurances bought by every user in the database, and the WDS employee himself, are displayed on the browse page for that user.<br>
+
+Search the insurance: If the user clicked on ‘SEARCH’ Button, user is redirected to the search insurance page.<br>
+
+We have implemented a search page with an input field where users can input their username.<br>
+
+We are retrieving the insurance details from the database based on the entered username and displaying the insurance details on the HTML page.<br>
+
+<br><br>
+
+
+<b><strong>Security Features</strong></b><br>
+
+<i><u>SQL Injection</u></i><br> Since we are getting inputs from the user, there is risk of SQL injection which might occur if the user enters any malicious input which might run on the database  and destroy it or can be a security concern for other user’s data.  In order to save the database against any such attacks, We have used prepared statements available in PhP whenever we are taking the input from the user and running queries on the database. As per the prepared statements, we first prepare the SQL query without any input to it and then we bind the input and execute the query which saves the database against any SQL Injection. <br><br>
+
+<i><u>Cross Site Scripting</u></i><br> We are displaying data to the user at various screens. There are chances of any attacker injecting a Javascript to the outcome.  In order to deal with such Cross Site scripting attacks, we have used PhP HTMLSPECIALCHARS() functionality for the data we are displaying.<br><br>
+
+
+<b><strong>Session variable</strong></b><br>
+Multiple users can use the site at the same time. We have implemented this with SESSION support of PHP.<br>
+There is a separate $_SESSION created for each user which is done by the XAMPP server.<br>
+As a visitor accesses the website, he is assigned a unique session id. PHP automatically checks if a specific session id is sent with the request i.e. if the session.auto_start is set to 1 or explicitly through session_start() or implicitly through session_register(). If this is the case, the prior saved environment is recreated.
+
+ <br><br>
+<b><strong>Summary of Learning Outcome</strong></b><br>
+Learned to implement changes in the code to secure the database against SQL injections and Cross site scripting which is a great threat. Security is a major concern. So, this is one of the major takeaways from the project. <br>
+Got a good understanding of implementing dynamic web pages by manipulating DOM using Javascript. <br>
+Php coding to solve challenging problems.<br>
+Processing forms with Php(collect data in a form, display submitted data by the form).<br>
+Server-side validation of form data.<br>
+Insert and display data using Php with MySQL.<br>
+Test, debug and deploy web pages with Php and MYSQL.<br>
+Understanding of REST APIs and their usage ($_GET, $_POST).<br>
+Creating a session, allowing access to multiple users at same time with Php. <br>
+Debugging in Php: comprehending Php error messages and debugging.<br>
+Structured Php programming.<br>
+Practical implementation of database concepts<br>
+PhpMyAdmin: creating database, tables, data types, data manipulation, primary key/foreign key relations.<br>
+Exporting and importing a database with PhpMyAdmin.
+<br><br>
+
+</p>
+
+               <div style="text-align: center;"class="col-lg-111" >
+        <a type="submit" class="btn btn-defeault btn-send" href="https://github.com/Arundita/web-application-Php-MySQL">Click here for the github repo</a>
+    </div><br><br>
+   
+        </div>
+      </div>
+
+    </div><!-- End About Section -->
+
+
+</body>
+
+</html>
