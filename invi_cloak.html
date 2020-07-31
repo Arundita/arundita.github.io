@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>motion-detection-using-opencv</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/hover/hover.min.css" rel="stylesheet">
+  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="education.html"><img src="assets/img//logo.png" alt="logo"></a>  
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+      </div>
+    </div>
+  </nav><!-- End Navbar -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="paddsection">
+      <div class="container">
+       
+            <div class="about-descr">
+
+              <p class="p-heading">Harry Potter's Invisibility Cloak using OpenCV</p>
+              <p class="separator">
+              <b><strong>Introduction</strong></b>
+              <br>Hello you all Harry Potter's fans. I have written a python code using OpenCv to replicate the invisibility cloak from Harry Potter.<br><br>
+
+
+
+<b><strong>Working Theory</strong></b><br>
+1. Read every frame, convert the color from RGB to HSV and generate mask to detect red color.<br>
+2. To segment out the red part from each frame, performed cv2 morphology open and dilation on the mask part, created an inverted mask using cv2 bitwise_not and performed bitwise_and with the inverted mask.<br>
+• Displayed the static background image pixels only for the masked region thus creating the ‘invisible’ affect.
+<br>
+<br><br>
+
+</p>
+
+               <div style="text-align: center;"class="col-lg-12" >
+        <a type="submit" class="btn btn-defeault btn-send" href="https://github.com/Arundita/Invisibility-Cloak">Click here for the github repo</a>
+    </div><br><br>
+  
+        </div>
+      </div>
+
+    </div><!-- End About Section -->
+
+
+    
+
+    
+
+</body>
+
+</html>
