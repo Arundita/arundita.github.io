@@ -59,7 +59,7 @@
 <b><strong>Working Theory</strong></b><br>
 1. Read every frame, convert the color from RGB to HSV and generate mask to detect red color.<br>
 2. To segment out the red part from each frame, performed cv2 morphology open and dilation on the mask part, created an inverted mask using cv2 bitwise_not and performed bitwise_and with the inverted mask.<br>
-• Displayed the static background image pixels only for the masked region thus creating the ‘invisible’ affect.
+<br>3. Displayed the static background image pixels only for the masked region thus creating the ‘invisible’ affect.
 <br>
 <br><br>
 
